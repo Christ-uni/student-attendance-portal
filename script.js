@@ -1,46 +1,53 @@
-// ---- LOGIN HANDLING ----
-document.getElementById("loginBtn")?.addEventListener("click", function () {
-    let id = document.getElementById("loginId").value.trim();
-    let pass = document.getElementById("password").value.trim();
+// --------------------- USER DATA ---------------------
+const userData = {
+    name: "Ananya Nallurmana Jayadevan",
+    email: "ananya.jayadevan@bcomfah.christuniversity.in",
+    roll: "2412205",
+    class: "4BCOMF&A C",
+    mobile: "9606357445"
+};
 
-    if (id === "2412205" && pass === "000000") {
-        // Save details
-        localStorage.setItem("studentName", "Ananya Nallurmana Jayadevan");
-        localStorage.setItem("studentEmail", "ananya.jayadevan@bcomfah.christuniversity.in");
-        localStorage.setItem("studentRoll", "2412205");
-        localStorage.setItem("studentClass", "4BCOMF&A C");
-        localStorage.setItem("studentMobile", "9606357445");
+// --------------------- LOGIN FUNCTION ---------------------
+function login() {
+    const id = document.getElementById("loginId").value;
+    const pass = document.getElementById("password").value;
 
-        window.location.href = "attendance.html";
+    // Set login condition (you can change password later)
+    if (id === "2412205" && pass === "38716778") {
+        localStorage.setItem("student", JSON.stringify(userData));
+        window.location.href = "profile.html"; // Redirect to profile first
     } else {
-        alert("Invalid Credentials");
+        alert("Invalid Login ID or Password");
     }
-});
+}
 
-// ---- POPULATE STUDENT DETAILS ON ATTENDANCE PAGE ----
-window.addEventListener("DOMContentLoaded", () => {
-    const name = localStorage.getItem("studentName");
-    const email = localStorage.getItem("studentEmail");
-    const roll = localStorage.getItem("studentRoll");
-    const cls = localStorage.getItem("studentClass");
-    const mobile = localStorage.getItem("studentMobile");
+// --------------------- LOAD PROFILE DATA ---------------------
+function loadProfile() {
+    const student = JSON.parse(localStorage.getItem("student"));
+    if (!student) return;
 
-    if (document.getElementById("pname")) {
-        document.getElementById("pname").textContent = name;
-        document.getElementById("pemail").textContent = email;
-        document.getElementById("proll").textContent = roll;
-        document.getElementById("pclass").textContent = cls;
-        document.getElementById("pmobile").textContent = mobile;
-    }
-});
+    document.getElementById("profileName").innerText = student.name;
+    document.getElementById("profileEmail").innerText = student.email;
+    document.getElementById("profileRoll").innerText = student.roll;
+    document.getElementById("profileClass").innerText = student.class;
+    document.getElementById("profileMobile").innerText = student.mobile;
+}
 
-// ---- NAVIGATION DROPDOWN ----
-document.querySelector(".menu-btn")?.addEventListener("click", () => {
-    document.querySelector(".dropdown")?.classList.toggle("show");
-});
+// --------------------- NAVIGATION BETWEEN PAGES ---------------------
+function goToProfile() {
+    window.location.href = "profile.html";
+}
 
-document.getElementById("logoutBtn")?.addEventListener("click", () => {
+function goToAttendance() {
+    window.location.href = "attendance.html";
+}
+
+function goToAbsence() {
+    window.location.href = "absence.html";
+}
+
+function logout() {
     localStorage.clear();
     window.location.href = "index.html";
-});
+}
 
