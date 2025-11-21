@@ -2,51 +2,36 @@ function login() {
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
 
-    // VALID CREDENTIALS
     if (username === "2412205" && password === "38716778") {
-        document.getElementById("message").textContent = "Login Success!";
-        document.getElementById("message").style.color = "green";
 
-        // Store student info
+        // Save student info
         localStorage.setItem("studentName", "Ananya Nallurmana Jayadevan");
         localStorage.setItem("rollNo", "2412205");
         localStorage.setItem("email", "ananya.jayadevan@bcomfah.christuniversity.in");
+        localStorage.setItem("phone", "9606357445");
         localStorage.setItem("class", "4BCOMF&A C");
-        localStorage.setItem("mobileNo", "9606357445");
 
-        // Redirect after success
-        setTimeout(() => {
-            window.location.href = "attendance.html";
-        }, 1000);
-    } 
-    else {
-        document.getElementById("message").textContent = "Invalid login, try again.";
+        window.location.href = "profile.html";
+    } else {
+        document.getElementById("message").textContent = "Invalid Login!";
         document.getElementById("message").style.color = "red";
     }
 }
 
+// Load stored values on pages
+window.onload = function() {
+    if (localStorage.getItem("rollNo")) {
+        document.getElementById("studentName")?.textContent = localStorage.getItem("studentName");
+        document.getElementById("rollNo")?.textContent = localStorage.getItem("rollNo");
+        document.getElementById("email")?.textContent = localStorage.getItem("email");
+        document.getElementById("phone")?.textContent = localStorage.getItem("phone");
+        document.getElementById("class")?.textContent = localStorage.getItem("class");
+    }
+};
 
-// ---- Display Login Saved Data in Attendance Page ----
-if (window.location.pathname.includes("attendance.html")) {
-    let name = localStorage.getItem("studentName");
-    let roll = localStorage.getItem("rollNo");
-    let email = localStorage.getItem("email");
-    let name = localStorage.getItem("class");
-    let name = localStorage.getItem("mobileNo");
-
-    // If someone opens attendance page without login → redirect
-    if (!roll) window.location.href = "index.html";
-
-    document.getElementById("studentName").textContent = name;
-    document.getElementById("rollNo").textContent = roll;
-    document.getElementById("email").textContent = email;
-    document.getElementById("class").textContent = class;
-    document.getElementById("email").textContent = mobileNo;
-}
-
-
-// ---- Logout ----
+// Logout
 function logout() {
     localStorage.clear();
     window.location.href = "index.html";
 }
+
