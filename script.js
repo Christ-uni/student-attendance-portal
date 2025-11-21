@@ -1,27 +1,41 @@
 function login() {
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-    if(username === "2412205" && password === "38716778") {
+    if (username === "student" && password === "1234") {
 
-        localStorage.setItem("studentData", JSON.stringify({
+        const studentData = {
             name: "Ananya Nallurmana Jayadevan",
             email: "ananya.jayadevan@bcomfah.christuniversity.in",
             roll: "2412205",
             class: "4BCOMF&A C",
             phone: "9606357445"
-        }));
+        };
 
-        document.getElementById("message").textContent = "Login Successful!";
-        document.getElementById("message").style.color = "green";
+        localStorage.setItem("studentInfo", JSON.stringify(studentData));
+
+        document.getElementById("loginMessage").innerText = "Login Successful!";
+        document.getElementById("loginMessage").style.color = "lightgreen";
 
         setTimeout(() => {
             window.location.href = "attendance.html";
-        }, 900);
+        }, 1200);
 
     } else {
-        document.getElementById("message").textContent = "Invalid Login Details!";
-        document.getElementById("message").style.color = "red";
+        document.getElementById("loginMessage").innerText = "Invalid Username or Password!";
+        document.getElementById("loginMessage").style.color = "red";
     }
 }
+
+window.onload = function () {
+    const data = JSON.parse(localStorage.getItem("studentInfo"));
+
+    if (data) {
+        document.getElementById("studentName").innerText = data.name;
+        document.getElementById("studentEmail").innerText = data.email;
+        document.getElementById("studentRoll").innerText = data.roll;
+        document.getElementById("studentClass").innerText = data.class;
+        document.getElementById("studentPhone").innerText = data.phone;
+    }
+};
 
