@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marks Card</title>
     <link rel="stylesheet" href="style.css" />
+
     <style>
 
         .marks-container {
@@ -24,7 +25,7 @@
         /* Scrollable Image Area */
         .scroll-box {
             width: 100%;
-            height: 450px; /* Adjustable depending on your style */
+            height: 450px;
             overflow-y: scroll;
             overflow-x: hidden;
             margin-top: 20px;
@@ -35,6 +36,22 @@
 
         .scroll-box img {
             width: 100%;
+        }
+
+        /* Marks Table Style */
+        .marks-table {
+            width: 90%;
+            margin: auto;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 16px;
+            text-align: center;
+            display: none;
+        }
+
+        .marks-table th, .marks-table td {
+            border: 1px solid #aaa;
+            padding: 10px;
         }
 
     </style>
@@ -67,7 +84,7 @@
         <option value="sem3">Sem3 (October 2025)</option>
     </select>
 
-    <!-- Scrollable boxes -->
+    <!-- Scrollable image preview -->
     <div id="box_sem1" class="scroll-box">
         <img src="sem1.png">
     </div>
@@ -80,23 +97,54 @@
         <img src="sem3.png">
     </div>
 
+
+    <!-- SEM 1 TABLE -->
+    <table id="table_sem1" class="marks-table">
+        <tr><th>Subject</th><th>Internal</th><th>External</th><th>Total</th><th>Grade</th></tr>
+        <tr><td>Financial Accounting</td><td>45</td><td>48</td><td>93</td><td>A+</td></tr>
+        <tr><td>Principles of Management</td><td>42</td><td>46</td><td>88</td><td>A</td></tr>
+        <tr><td>Business Economics</td><td>44</td><td>45</td><td>89</td><td>A</td></tr>
+        <tr><td>Communicative English</td><td>50</td><td>49</td><td>99</td><td>A+</td></tr>
+    </table>
+
+    <!-- SEM 2 TABLE -->
+    <table id="table_sem2" class="marks-table">
+        <tr><th>Subject</th><th>Internal</th><th>External</th><th>Total</th><th>Grade</th></tr>
+        <tr><td>Corporate Accounting</td><td>48</td><td>47</td><td>95</td><td>A+</td></tr>
+        <tr><td>Business Law</td><td>45</td><td>44</td><td>89</td><td>A</td></tr>
+        <tr><td>Business Mathematics</td><td>43</td><td>46</td><td>89</td><td>A</td></tr>
+        <tr><td>English</td><td>49</td><td>48</td><td>97</td><td>A+</td></tr>
+    </table>
+
+    <!-- SEM 3 TABLE -->
+    <table id="table_sem3" class="marks-table">
+        <tr><th>Subject</th><th>Internal</th><th>External</th><th>Total</th><th>Grade</th></tr>
+        <tr><td>Cost Accounting</td><td>47</td><td>46</td><td>93</td><td>A+</td></tr>
+        <tr><td>Taxation</td><td>46</td><td>45</td><td>91</td><td>A</td></tr>
+        <tr><td>Auditing</td><td>45</td><td>47</td><td>92</td><td>A</td></tr>
+        <tr><td>Indian Constitution</td><td>50</td><td>50</td><td>100</td><td>A+</td></tr>
+    </table>
+
 </div>
 
 <script src="script.js"></script>
+
 <script>
-
 function showMarks() {
-
-    // hide all boxes
     document.querySelectorAll(".scroll-box").forEach(box => box.style.display = "none");
+    document.querySelectorAll(".marks-table").forEach(tbl => tbl.style.display = "none");
 
     let selected = document.getElementById("semSelect").value;
 
     if (selected) {
         document.getElementById("box_" + selected).style.display = "block";
+        document.getElementById("table_" + selected).style.display = "table";
     }
 }
 
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+}
 </script>
 
 </body>
