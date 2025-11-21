@@ -1,34 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg">
 
-    <div class="login-container">
-        <h2>Welcome Christite!</h2>
+<div class="login-container">
+    <h2>Welcome Christite!</h2>
 
-        <input type="text" id="username" placeholder="User Name" />
-        <input type="password" id="password" placeholder="Password" />
+    <input type="text" id="username" placeholder="User Name">
+    <input type="password" id="password" placeholder="Password">
 
-        <button onclick="login()">Login</button>
-    </div>
+    <button onclick="login()">Login</button>
+</div>
 
-<script>
-function login() {
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-
-    if (username === "2412205" && password === "38716778") {
-        window.location.href = "attendance.html";
-    } else {
-        alert("Invalid Login");
-    }
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
