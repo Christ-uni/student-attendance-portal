@@ -10,15 +10,16 @@
 
 <header class="navbar">
     <h2 class="logo">Student Portal</h2>
-   <div class="dropdown">
-    <button onclick="toggleMenu()" class="dropbtn">☰ Menu</button>
-    <div id="menu" class="dropdown-content">
-        <a href="profile.html">Profile</a>
-        <a href="attendance.html">Attendance Details</a>
-        <a href="absence.html">Absence Details</a>
-        <a href="login.html">Logout</a>
+
+    <div class="dropdown">
+        <button onclick="toggleMenu()" class="dropbtn">☰ Menu</button>
+        <div id="menu" class="dropdown-content">
+            <a href="profile.html">Profile</a>
+            <a href="attendance.html">Attendance Details</a>
+            <a href="absence.html">Absence Details</a>
+            <a href="index.html">Logout</a>
+        </div>
     </div>
-</div>
 </header>
 
 <h1 class="section-title">Absence Details</h1>
@@ -29,42 +30,49 @@
 <tr>
     <td>30-10-2025</td>
     <td>Thursday</td>
-    <td><span class="circle">5</span></td>
+    <td>5</td>
 </tr>
 
 <tr>
     <td>31-10-2025</td>
     <td>Friday</td>
-    <td><span class="circle">5</span></td>
+    <td>5</td>
 </tr>
 
 <tr>
     <td>07-11-2025</td>
     <td>Friday</td>
-    <td><span class="circle">4</span></td>
+    <td>4</td>
 </tr>
 
 <tr>
     <td>10-11-2025</td>
     <td>Monday</td>
-    <td><span class="circle">4</span></td>
+    <td>4</td>
 </tr>
 
 <tr>
     <td>13-11-2025</td>
     <td>Thursday</td>
-    <td><span class="circle">1</span></td>
+    <td>1</td>
 </tr>
 
 <tr>
     <td>20-11-2025</td>
     <td>Thursday</td>
-    <td><span class="circle">1</span></td>
+    <td>1</td>
 </tr>
 
 </table>
 </div>
-    
+
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
 </body>
 </html>
+
 
