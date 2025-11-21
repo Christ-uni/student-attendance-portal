@@ -1,71 +1,36 @@
-/* Background */
-.bg {
-    background: url('https://images.shiksha.com/mediadata/images/articles/1663140152phpXSSwBq.jpeg') no-repeat center center fixed;
-    background-size: cover;
-    filter: none;
-}
-
-/* Blur backdrop for login box */
-.login-box {
-    width: 350px;
-    padding: 25px;
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(6px);
-    border-radius: 10px;
-    margin: auto;
-    text-align: center;
-    margin-top: 150px;
-}
-
-/* Inputs */
-input {
+.absence-container {
     width: 90%;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-button {
-    width: 95%;
-    padding: 12px;
-    background: orange;
-    border: none;
-    font-size: 18px;
-    color: white;
-    cursor: pointer;
-}
-
-.forgot {
-    font-size: 12px;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.menu {
-    text-align: right;
-    padding: 15px;
-}
-
-.box {
-    width: 500px;
-    background: white;
-    padding: 25px;
+    max-width: 600px;
     margin: auto;
-    margin-top: 40px;
+    background: white;
+    padding: 20px;
     border-radius: 10px;
 }
 
-/* Absence circles */
-.circle {
-    background: blue;
-    padding: 6px 10px;
-    border-radius: 50%;
-    color: white;
+.absence-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    font-size: 18px;
 }
 
-.ab
+.absence-table tr {
+    border-bottom: 1px solid #cfcfcf;
+}
 
-table.absence tr {
-    border-bottom: 1px solid #ccc;
+.absence-table td {
+    padding: 10px 5px;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    background: #0066ff;
+    color: white;
+    border-radius: 50%;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }
