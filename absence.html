@@ -1,34 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Absence Details</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Portal — Absence</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg">
+<body>
 
-<div class="nav-menu">
-    <button onclick="toggleMenu()">☰ Menu</button>
-    <div class="menu-items" id="menu">
+  <div class="bg-image"></div>
+
+  <div class="topbar">
+    <div class="menu-wrap">
+      <button id="menuBtn3" class="menu-btn">☰ Menu</button>
+      <div id="menuItems3" class="menu-items">
         <a href="profile.html">Profile</a>
         <a href="attendance.html">Attendance Details</a>
         <a href="absence.html">Absence Details</a>
-        <a href="index.html">Logout</a>
+        <a id="logoutLink3" href="#">Logout</a>
+      </div>
     </div>
-</div>
+  </div>
 
-<div class="absence-box">
-<h2 class="center-title">Absence Details</h2>
-
-<table class="absence-table">
-<tr><td>30-10-2025</td><td>Thursday</td><td class="circle">5</td></tr>
-<tr><td>31-10-2025</td><td>Friday</td><td class="circle">5</td></tr>
-<tr><td>07-11-2025</td><td>Friday</td><td class="circle">4</td></tr>
-<tr><td>10-11-2025</td><td>Monday</td><td class="circle">4</td></tr>
-<tr><td>13-11-2025</td><td>Thursday</td><td class="circle">1</td></tr>
-<tr><td>20-11-2025</td><td>Thursday</td><td class="circle">1</td></tr>
-</table>
-
-</div>
+  <div class="card absence-card">
+    <table class="absence-table">
+      <tbody>
+        <tr><td class="date-col">30-10-2025</td><td class="day-col">Thursday</td><td class="num-col"><span class="circle">5</span></td></tr>
+        <tr><td class="date-col">31-10-2025</td><td class="day-col">Friday</td><td class="num-col"><span class="circle">5</span></td></tr>
+        <tr><td class="date-col">07-11-2025</td><td class="day-col">Friday</td><td class="num-col"><span class="circle">4</span></td></tr>
+        <tr><td class="date-col">10-11-2025</td><td class="day-col">Monday</td><td class="num-col"><span class="circle">4</span></td></tr>
+        <tr><td class="date-col">13-11-2025</td><td class="day-col">Thursday</td><td class="num-col"><span class="circle">1</span></td></tr>
+        <tr><td class="date-col">20-11-2025</td><td class="day-col">Thursday</td><td class="num-col"><span class="circle">1</span></td></tr>
+      </tbody>
+    </table>
+  </div>
 
 <script src="script.js"></script>
 </body>
