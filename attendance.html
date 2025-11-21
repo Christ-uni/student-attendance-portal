@@ -11,23 +11,23 @@
 <!-- TOP BAR WITH DROPDOWN -->
 <header class="navbar">
     <h2 class="logo">Student Portal</h2>
+
     <div class="dropdown">
-        <button class="dropbtn">☰</button>
-       <div class="dropdown">
-    <button onclick="toggleMenu()" class="dropbtn">☰ Menu</button>
-    <div id="menu" class="dropdown-content">
-        <a href="profile.html">Profile</a>
-        <a href="attendance.html">Attendance Details</a>
-        <a href="absence.html">Absence Details</a>
-        <a href="login.html">Logout</a>
+        <button onclick="toggleMenu()" class="dropbtn">☰ Menu</button>
+        <div id="menu" class="dropdown-content">
+            <a href="profile.html">Profile</a>
+            <a href="attendance.html">Attendance Details</a>
+            <a href="absence.html">Absence Details</a>
+            <a href="index.html">Logout</a>
+        </div>
     </div>
-</div>
 </header>
 
 <h1 class="section-title">Attendance</h1>
 
 <div class="table-container">
-    <table>
+    <table class="attendance-table">
+
         <thead>
             <tr>
                 <th>Sl.No</th>
@@ -51,6 +51,11 @@
         </tbody>
     </table>
 </div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
 
 <script src="script.js"></script>
 </body>
