@@ -3,112 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance</title>
+    <title>Attendance Portal</title>
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        .student-info-box {
-            background: white;
-            width: 90%;
-            margin: 20px auto;
-            padding: 18px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            font-size: 16px;
-            font-family: Arial, sans-serif;
-        }
-
-        .student-info-box h2 {
-            margin-bottom: 10px;
-            font-size: 22px;
-            color: #003366;
-        }
-
-        .student-info-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 8px;
-        }
-
-        .label {
-            font-weight: bold;
-        }
-
-        table {
-            width: 90%;
-            margin: 20px auto;
-            border-collapse: collapse;
-            font-size: 15px;
-        }
-
-        th {
-            background: #1a75ff;
-            padding: 10px;
-            color: white;
-        }
-
-        td {
-            text-align: center;
-            padding: 10px;
-            border: 1px solid #ddd;
-            background: white;
-        }
-
-        body {
-            background: url("https://images.unsplash.com/photo-1557851091-0d54f0c5a99a?auto=format&fit=crop&w=1400&q=60") no-repeat center center fixed;
-            background-size: cover;
-        }
-
-        .overlay {
-            background: rgba(255, 255, 255, 0.75);
-            min-height: 100vh;
-            padding-bottom: 50px;
-        }
-    </style>
 </head>
 
 <body>
-<div class="overlay">
 
-    <!-- STUDENT INFO SECTION -->
-    <div class="student-info-box">
+    <!-- TOP MENU -->
+    <div class="menu-container">
+        <button class="menu-btn">☰ Menu</button>
+        <div class="dropdown">
+            <a href="attendance.html">Attendance</a>
+            <a href="profile.html">Profile</a>
+            <a id="logoutBtn" href="#">Logout</a>
+        </div>
+    </div>
+
+    <!-- STUDENT DETAILS BOX -->
+    <div class="profile-box">
         <h2>Student Details</h2>
-        <div class="student-info-grid">
-            <p><span class="label">Name:</span> <span id="pname"></span></p>
-            <p><span class="label">Email:</span> <span id="pemail"></span></p>
-            <p><span class="label">Roll No:</span> <span id="proll"></span></p>
-            <p><span class="label">Class:</span> <span id="pclass"></span></p>
-            <p><span class="label">Mobile:</span> <span id="pmobile"></span></p>
+
+        <div class="student-grid">
+            <p><strong>Name:</strong> <span id="pname"></span></p>
+            <p><strong>Email:</strong> <span id="pemail"></span></p>
+            <p><strong>Roll No:</strong> <span id="proll"></span></p>
+            <p><strong>Class:</strong> <span id="pclass"></span></p>
         </div>
     </div>
 
     <!-- ATTENDANCE TABLE -->
-    <h2 style="text-align:center; color:#003366; font-family:Arial;">Attendance</h2>
+    <div class="table-container">
+        <h2>Attendance</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sl.No</th>
+                    <th>Subject Name</th>
+                    <th>Attendance Type</th>
+                    <th>Conducted</th>
+                    <th>Present</th>
+                    <th>Total Hours absent</th>
+                    <th>Percentage</th>
+                </tr>
+            </thead>
 
-    <table>
-        <tr>
-            <th>Sl.No</th>
-            <th>Subject Name</th>
-            <th>Attendance Type</th>
-            <th>Conducted</th>
-            <th>Present</th>
-            <th>Total Hours absent</th>
-            <th>Percentage</th>
-        </tr>
+            <tbody>
+                <tr><td>1</td><td>INDIRECT TAX</td><td>Theory</td><td>2.0</td><td>1.0</td><td>1.0</td><td>50.0</td></tr>
+                <tr><td>2</td><td>FINANCIAL MANAGEMENT - II</td><td>Theory</td><td>9.0</td><td>6.0</td><td>3.0</td><td>66.67</td></tr>
+                <tr><td>3</td><td>HOLISTIC EDUCATION DEVELOPMENT-II</td><td>Theory</td><td>4.0</td><td>1.0</td><td>3.0</td><td>25.0</td></tr>
+                <tr><td>4</td><td>INCOME TAX</td><td>Theory</td><td>10.0</td><td>7.0</td><td>3.0</td><td>70.0</td></tr>
+                <tr><td>5</td><td>AUDITING - II</td><td>Theory</td><td>12.0</td><td>8.0</td><td>4.0</td><td>66.67</td></tr>
+                <tr><td>6</td><td>DIGITAL MARKETING</td><td>Theory</td><td>13.0</td><td>10.0</td><td>3.0</td><td>76.92</td></tr>
+                <tr><td>7</td><td>STRATEGIC MANAGEMENT AND ETHICAL GOVERNANCE</td><td>Theory</td><td>8.0</td><td>5.0</td><td>3.0</td><td>62.5</td></tr>
 
-        <tr><td>1</td><td>INDIRECT TAX</td><td>Theory</td><td>2.0</td><td>1.0</td><td>1.0</td><td>50.0</td></tr>
-        <tr><td>2</td><td>FINANCIAL MANAGEMENT - II</td><td>Theory</td><td>9.0</td><td>6.0</td><td>3.0</td><td>66.67</td></tr>
-        <tr><td>3</td><td>HOLISTIC EDUCATION DEVELOPMENT-II</td><td>Theory</td><td>4.0</td><td>1.0</td><td>3.0</td><td>25.0</td></tr>
-        <tr><td>4</td><td>INCOME TAX</td><td>Theory</td><td>10.0</td><td>7.0</td><td>3.0</td><td>70.0</td></tr>
-        <tr><td>5</td><td>AUDITING - II</td><td>Theory</td><td>12.0</td><td>8.0</td><td>4.0</td><td>66.67</td></tr>
-        <tr><td>6</td><td>DIGITAL MARKETING</td><td>Theory</td><td>13.0</td><td>10.0</td><td>3.0</td><td>76.92</td></tr>
-        <tr><td>7</td><td>STRATEGIC MANAGEMENT AND ETHICAL GOVERNANCE</td><td>Theory</td><td>8.0</td><td>5.0</td><td>3.0</td><td>62.5</td></tr>
-
-        <tr style="font-weight:bold; background:#e6f0ff">
-            <td colspan="3">Total</td><td>58.0</td><td>38.0</td><td>20.0</td><td>65.52</td>
-        </tr>
-    </table>
-</div>
+                <tr class="total-row">
+                    <td colspan="3"><strong>Total</strong></td>
+                    <td><strong>58.0</strong></td>
+                    <td><strong>38.0</strong></td>
+                    <td><strong>20.0</strong></td>
+                    <td><strong>65.52</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 <script src="script.js"></script>
 </body>
