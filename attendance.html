@@ -1,42 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Attendance</title>
-    <link rel="stylesheet" href="style.css" />
+<title>Attendance</title>
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg">
 
-<!-- TOP BAR WITH DROPDOWN -->
-<header class="navbar">
-    <h2 class="logo">Student Portal</h2>
-    <div class="dropdown">
-        <button class="dropbtn">☰</button>
-        <div class="dropdown-content">
-            <a href="profile.html">Profile</a>
-            <a href="attendance.html">Attendance Details</a>
-            <a href="absence.html">Absence Details</a>  <!-- NEW OPTION -->
-            <a href="index.html">Logout</a>
-        </div>
+<div class="nav-menu">
+    <button onclick="toggleMenu()">☰ Menu</button>
+    <div class="menu-items" id="menu">
+        <a href="profile.html">Profile</a>
+        <a href="attendance.html">Attendance Details</a>
+        <a href="absence.html">Absence Details</a>
+        <a href="index.html">Logout</a>
     </div>
-</header>
-
-<h1 class="section-title">Attendance</h1>
+</div>
 
 <div class="table-container">
-    <table>
-        <thead>
-            <tr>
-                <th>Sl.No</th>
-                <th>Subject Name</th>
-                <th>Attendance Type</th>
-                <th>Conducted</th>
-                <th>Present</th>
-                <th>Total Hours absent</th>
-                <th>Percentage</th>
-            </tr>
-        </thead>
+<h2 class="center-title">Attendance Details</h2>
+
+<table class="attendance-table">
+<thead>
+<tr>
+<th>Sl.No</th><th>Subject Name</th><th>Type</th><th>Conducted</th><th>Present</th><th>Absent</th><th>Percentage</th>
+</tr>
+</thead>
+    
         <tbody>
             <tr><td>1</td><td>INDIRECT TAX</td><td>Theory</td><td>2.0</td><td>1.0</td><td>1.0</td><td>50.0</td></tr>
             <tr><td>2</td><td>FINANCIAL MANAGEMENT - II</td><td>Theory</td><td>9.0</td><td>6.0</td><td>3.0</td><td>66.67</td></tr>
@@ -45,9 +34,10 @@
             <tr><td>5</td><td>AUDITING - II</td><td>Theory</td><td>12.0</td><td>8.0</td><td>4.0</td><td>66.67</td></tr>
             <tr><td>6</td><td>DIGITAL MARKETING</td><td>Theory</td><td>13.0</td><td>10.0</td><td>3.0</td><td>76.92</td></tr>
             <tr><td>7</td><td>STRATEGIC MANAGEMENT AND ETHICAL GOVERNANCE</td><td>Theory</td><td>8.0</td><td>5.0</td><td>3.0</td><td>62.5</td></tr>
-            <tr style="font-weight:bold;"><td colspan="3">Total</td><td>58.0</td><td>38.0</td><td>20.0</td><td>65.52</td></tr>
-        </tbody>
-    </table>
+
+<tr class="total-row"><td colspan="3">Total</td><td>58</td><td>38</td><td>20</td><td>65.52%</td></tr>
+</tbody>
+</table>
 </div>
 
 <script src="script.js"></script>
