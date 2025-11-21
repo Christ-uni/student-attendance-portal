@@ -1,32 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Profile</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Portal — Profile</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg">
+<body>
 
-<div class="nav-menu">
-    <button onclick="toggleMenu()">☰ Menu</button>
-    <div class="menu-items" id="menu">
+  <div class="bg-image"></div>
+
+  <!-- top-right dropdown -->
+  <div class="topbar">
+    <div class="menu-wrap">
+      <button id="menuBtn" class="menu-btn">☰ Menu</button>
+      <div id="menuItems" class="menu-items">
         <a href="profile.html">Profile</a>
         <a href="attendance.html">Attendance Details</a>
         <a href="absence.html">Absence Details</a>
-        <a href="index.html">Logout</a>
+        <a id="logoutLink" href="#">Logout</a>
+      </div>
     </div>
-</div>
+  </div>
 
-<div class="profile-box">
-    <h2>Student Profile</h2>
+  <!-- profile card in center -->
+  <div class="card profile-card" id="profileCard">
+    <h2>Student Details</h2>
 
-    <div class="profile-row"><span class="label">Name:</span> Ananya Nallurmana Jayadevan</div>
-    <div class="profile-row"><span class="label">Email:</span> ananya.jayadevan@bcomfah.christuniversity.in</div>
-    <div class="profile-row"><span class="label">Roll No:</span> 2412205</div>
-    <div class="profile-row"><span class="label">Class:</span> 4BCOMF&A C</div>
-    <div class="profile-row"><span class="label">Mobile:</span> 9606357445</div>
-</div>
+    <div class="form-row">
+      <label class="lbl">Name:</label>
+      <input id="profileName" class="field" />
+    </div>
+
+    <div class="form-row">
+      <label class="lbl">Email ID:</label>
+      <input id="profileEmail" class="field" />
+    </div>
+
+    <div class="form-row">
+      <label class="lbl">Roll No:</label>
+      <input id="profileRoll" class="field" />
+    </div>
+
+    <div class="form-row">
+      <label class="lbl">Class:</label>
+      <input id="profileClass" class="field" />
+    </div>
+
+    <div class="form-row">
+      <label class="lbl">Mobile:</label>
+      <input id="profileMobile" class="field" />
+    </div>
+
+    <div class="actions-row">
+      <button id="saveProfile" class="primary-btn">Save</button>
+    </div>
+  </div>
 
 <script src="script.js"></script>
 </body>
 </html>
-
