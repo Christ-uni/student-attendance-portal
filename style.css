@@ -1,216 +1,110 @@
-/* ===== Global Reset ===== */
-
-* {
+/* Background image */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* ===== Background Image for ALL PAGES after login ===== */
-
-body {
-    background: url("https://images.shiksha.com/mediadata/images/articles/1663140152phpXSSwBq.jpeg") no-repeat center center fixed;
+    height: 100vh;
+    background-image: url('https://images.shiksha.com/mediadata/images/articles/1663140152phpXSSwBq.jpeg');
     background-size: cover;
-    backdrop-filter: blur(5px);
-    min-height: 100vh;
-    padding-bottom: 50px;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
 }
 
-
-/* ===== LOGIN PAGE BACKGROUND OVERRIDE ===== */
-
-.login-bg {
-    background: url("https://images.shiksha.com/mediadata/images/articles/1663140152phpXSSwBq.jpeg") no-repeat center center fixed !important;
-    background-size: cover !important;
+/* Blur layer */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(6px);
+    z-index: -1;
 }
 
-/* ===== Login Box ===== */
-
-.login-box {
+/* LOGIN CONTAINER */
+.login-container {
     width: 350px;
-    margin: 130px auto;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 12px;
     text-align: center;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
 }
 
-.login-box input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid gray;
-    border-radius: 5px;
-}
-
-.login-btn {
-    width: 100%;
-    background: #004aad;
+/* Welcome text */
+.login-container h2 {
+    margin: 0 0 25px 0;
+    font-size: 22px;
+    font-weight: bold;
     color: white;
-    padding: 12px;
-    border-radius: 5px;
-    cursor: pointer;
+    text-shadow: 1px 1px 4px black;
+}
+
+/* Input fields */
+input {
+    width: 85%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
     border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+/* Login button */
+button {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    background: #003eaa;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
     margin-top: 10px;
 }
 
-
-/* ===== Navbar + Dropdown ===== */
-
-.navbar {
-    width: 100%;
-    background: rgba(0, 0, 0, 0.55);
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+button:hover {
+    background: #002d7c;
 }
 
-.logo {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.dropbtn {
-    background: white;
-    color: black;
-    padding: 10px 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 18px;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0;
-    background: white;
-    min-width: 180px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px;
-    display: block;
-    text-decoration: none;
-    border-bottom: 1px solid #ddd;
-}
-
-.dropdown-content a:hover {
-    background: #0066ff;
-    color: white;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-
-/* ===== Section Title ===== */
-
-.section-title {
-    text-align: center;
-    margin: 30px 0;
-    font-size: 28px;
-    font-weight: bold;
-    color: white;
-    text-shadow: 0px 0px 5px black;
-}
-
-/* ===== Attendance Table Styles ===== */
-
-.table-container {
+/* Additional styling for tables and dropdown sections on attendance page (kept same) */
+.attendance-section, .student-details, .absence-details {
+    margin: 20px auto;
     width: 90%;
-    max-width: 1100px;
-    margin: auto;
-    overflow-x: auto;
+    max-width: 850px;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
+    margin-top: 10px;
 }
 
-th {
-    background: #0066ff;
-    color: white;
-    padding: 12px;
-    font-size: 16px;
-}
-
-td {
+table td, table th {
+    padding: 10px;
     text-align: center;
-    padding: 12px;
-    border: 1px solid #dcdcdc;
-}
-
-
-/* ===== Absence Page Table ===== */
-
-.absence-container {
-    width: 90%;
-    max-width: 600px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.absence-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 10px;
-    font-size: 18px;
-}
-
-.absence-table tr {
-    border-bottom: 1px solid #cfcfcf;
 }
 
 .absence-table td {
-    padding: 10px 5px;
+    border-bottom: 1px solid #ccc;
 }
 
+/* Blue circled numbers */
 .circle {
-    width: 30px;
-    height: 30px;
-    background: #0066ff;
+    background: #0056d6;
     color: white;
-    border-radius: 50%;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
+    width: 26px;
+    height: 26px;
+    display: inline-flex;
     justify-content: center;
-    margin: auto;
-}
-
-
-/* ===== Responsive Fix ===== */
-
-@media (max-width: 600px) {
-    .login-box {
-        width: 90%;
-    }
-
-    table {
-        font-size: 14px;
-    }
-
-    th, td {
-        padding: 8px;
-    }
+    align-items: center;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 14px;
 }
