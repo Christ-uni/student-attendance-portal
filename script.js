@@ -47,3 +47,27 @@ window.onclick = function(event) {
         }
     }
 };
+
+// ---------------- MARKS PAGE LOGIC ----------------
+
+// Function to load marks table on selection
+function showMarks() {
+
+    let selected = document.getElementById("semSelect");
+    if (!selected) return; // Prevents errors if script runs on other pages
+
+    let value = selected.value;
+
+    // hide all semester blocks
+    document.querySelectorAll(".semBox").forEach(box => box.style.display = "none");
+
+    // show only selected semester block
+    if (value) {
+        document.getElementById(value).style.display = "block";
+    }
+}
+
+// Auto hide all tables initially when page loads
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".semBox").forEach(box => box.style.display = "none");
+});
