@@ -1,130 +1,71 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Background with blur */
-body {
-    font-family: Arial, sans-serif;
-    height: 100vh;
-    background: url('/mnt/data/f32f4b37-bad4-4bcd-b236-9b7fe09b8994.png') no-repeat center center fixed;
+/* Background */
+.bg {
+    background: url('https://images.shiksha.com/mediadata/images/articles/1663140152phpXSSwBq.jpeg') no-repeat center center fixed;
     background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    filter: none;
 }
 
-.background-blur {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    z-index: -1;
-}
-
-/* Login Box */
+/* Blur backdrop for login box */
 .login-box {
     width: 350px;
     padding: 25px;
-    background: rgba(0, 43, 74, 0.9);
-    border-radius: 12px;
-    color: white;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(6px);
+    border-radius: 10px;
+    margin: auto;
     text-align: center;
+    margin-top: 150px;
 }
 
-.login-box input {
-    width: 100%;
+/* Inputs */
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 95%;
     padding: 12px;
-    margin-top: 15px;
-    border-radius: 6px;
+    background: orange;
     border: none;
-    font-size: 14px;
-}
-
-#loginBtn {
-    width: 100%;
-    margin-top: 18px;
-    background: #ff6a00;
-    padding: 12px;
     font-size: 18px;
-    border: none;
-    border-radius: 6px;
     color: white;
     cursor: pointer;
 }
 
-/* Profile Box */
-.profile-container {
-    width: 450px;
+.forgot {
+    font-size: 12px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.menu {
+    text-align: right;
+    padding: 15px;
+}
+
+.box {
+    width: 500px;
     background: white;
     padding: 25px;
-    border-radius: 12px;
-    display: none;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 10px;
 }
 
-.profile-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Profile Text Formatting */
-.profile-item b {
-    font-weight: bold;
-}
-
-.profile-item {
-    font-size: 16px;
-    margin: 10px 0;
-}
-
-/* Dropdown button */
-.dropdown-btn {
-    float: right;
-    margin-bottom: 10px;
-    background: #003366;
+/* Absence circles */
+.circle {
+    background: blue;
+    padding: 6px 10px;
+    border-radius: 50%;
     color: white;
-    padding: 8px 14px;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
 }
 
-.dropdown-content {
-    display: none;
-    margin-top: 10px;
-    background: #eef2f5;
-    padding: 12px;
-    border-radius: 6px;
-}
+.ab
 
-/* Table formatting */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 12px;
+table.absence tr {
+    border-bottom: 1px solid #ccc;
 }
-
-table td {
-    border: 1px solid #ccc;
-    padding: 6px;
-    text-align: center;
-}
-
-/* Logout button */
-#logoutBtn {
-    width: 100%;
-    margin-top: 20px;
-    background: #d9534f;
-    padding: 10px;
-    border: none;
-    color: white;
-    font-size: 17px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
