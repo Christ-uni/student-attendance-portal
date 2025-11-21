@@ -22,7 +22,7 @@ function login() {
     }
 }
 
-// Load profile data
+// Load profile data if on profile page
 if (localStorage.getItem("student") && document.getElementById("pname")) {
     let s = JSON.parse(localStorage.getItem("student"));
     document.getElementById("pname").textContent = s.name;
@@ -32,18 +32,18 @@ if (localStorage.getItem("student") && document.getElementById("pname")) {
     document.getElementById("pclass").textContent = s.class;
 }
 
-// Dropdown toggle
+// Dropdown toggle for all pages
 function toggleMenu() {
-    document.getElementById("menu").classList.toggle("show");
+    let menu = document.querySelector(".dropdown-content");
+    menu.classList.toggle("show");
 }
 
-// Auto-close dropdown when clicking outside
+// Close dropdown if clicking outside
 window.onclick = function(event) {
     if (!event.target.closest('.dropdown')) {
-        let items = document.getElementsByClassName("dropdown-content");
-        for (let i = 0; i < items.length; i++) {
-            items[i].classList.remove("show");
+        let menus = document.getElementsByClassName("dropdown-content");
+        for (let menu of menus) {
+            menu.classList.remove("show");
         }
     }
-}
-
+};
