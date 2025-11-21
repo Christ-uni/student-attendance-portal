@@ -1,50 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Christ Login</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Portal — Login</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- Background -->
-    <div class="background"></div>
+  <!-- blurred background (image is local) -->
+  <div class="bg-image"></div>
 
-    <!-- LOGIN PAGE -->
-    <div id="loginBox" class="login-container">
-        <h2>Welcome Christite!</h2>
+  <!-- Login box -->
+  <div class="login-card" id="loginCard" aria-label="login">
+    <h1 class="login-title">Welcome Christite !</h1>
 
-        <input type="text" placeholder="User Name" id="username" class="input-field" />
-        <input type="password" placeholder="Password" id="password" class="input-field" />
+    <input id="loginId" class="input" placeholder="User Name / Roll No" autocomplete="off" />
+    <input id="password" class="input" type="password" placeholder="Password" />
 
-        <button class="login-btn" onclick="login()">Login</button>
+    <!-- simple captcha label (visual only) -->
+    <div class="captcha-row">
+      <div class="captcha-box">3 7 6 a 1 a</div>
+      <button class="icon-btn" id="refreshCaptcha" title="Refresh">⟳</button>
     </div>
+    <input id="captchaInput" class="input" placeholder="Type the text above" />
 
-    <!-- PROFILE PAGE -->
-    <div id="profilePage" class="profile hidden">
-
-        <!-- Dropdown -->
-        <div class="top-right">
-            <select class="dropdown" onchange="navigate(this.value)">
-                <option value="profile">Profile</option>
-                <option value="attendance">Attendance</option>
-                <option value="absence">Absence Details</option>
-                <option value="logout">Logout</option>
-            </select>
-        </div>
-
-        <div class="profile-box">
-            <h2>Student Profile</h2>
-
-            <p><strong>Name:</strong> John Alex</p>
-            <p><strong>Email ID:</strong> johnalex@gmail.com</p>
-            <p><strong>Mobile:</strong> 9876543210</p>
-            <p><strong>Register No:</strong> 23BCA0123</p>
-            <p><strong>Class:</strong> BCA Semester 3</p>
-        </div>
+    <div class="login-row">
+      <button id="forgotBtn" class="link-btn">Forgot Password</button>
+      <button id="loginBtn" class="primary-btn">Login</button>
     </div>
+  </div>
 
 <script src="script.js"></script>
 </body>
 </html>
+
