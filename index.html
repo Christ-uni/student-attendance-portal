@@ -1,19 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christ Login</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg">
+<body>
 
-<div class="login-container">
-    <h2>Welcome Christite!</h2>
+    <!-- Background -->
+    <div class="background"></div>
 
-    <input type="text" id="username" placeholder="User Name">
-    <input type="password" id="password" placeholder="Password">
+    <!-- LOGIN PAGE -->
+    <div id="loginBox" class="login-container">
+        <h2>Welcome Christite!</h2>
 
-    <button onclick="login()">Login</button>
-</div>
+        <input type="text" placeholder="User Name" id="username" class="input-field" />
+        <input type="password" placeholder="Password" id="password" class="input-field" />
+
+        <button class="login-btn" onclick="login()">Login</button>
+    </div>
+
+    <!-- PROFILE PAGE -->
+    <div id="profilePage" class="profile hidden">
+
+        <!-- Dropdown -->
+        <div class="top-right">
+            <select class="dropdown" onchange="navigate(this.value)">
+                <option value="profile">Profile</option>
+                <option value="attendance">Attendance</option>
+                <option value="absence">Absence Details</option>
+                <option value="logout">Logout</option>
+            </select>
+        </div>
+
+        <div class="profile-box">
+            <h2>Student Profile</h2>
+
+            <p><strong>Name:</strong> John Alex</p>
+            <p><strong>Email ID:</strong> johnalex@gmail.com</p>
+            <p><strong>Mobile:</strong> 9876543210</p>
+            <p><strong>Register No:</strong> 23BCA0123</p>
+            <p><strong>Class:</strong> BCA Semester 3</p>
+        </div>
+    </div>
 
 <script src="script.js"></script>
 </body>
