@@ -67,65 +67,82 @@ button:hover {
     background: #cc5500;
 }
 
-/* Profile Card */
+/* Profile Layout */
 .profile-box {
-    width: 500px;
-    margin: 110px auto;
-    background: white;
+    width: 450px;
+    margin: 120px auto;
     padding: 30px;
+    background: white;
     border-radius: 12px;
-    box-shadow: 0px 0px 12px rgba(0,0,0,0.25);
-}
-
-.profile-box h2 {
-    text-align: center;
-    margin-bottom: 20px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
 }
 
 .profile-row {
+    margin: 10px 0;
     font-size: 18px;
-    margin-bottom: 15px;
 }
 
-.profile-row span.label {
-    font-weight: bold;
-}
+.label { font-weight: bold; }
 
-/* ===== Absence Page Table ===== */
-
-.absence-container {
+/* Attendance Table */
+.table-container {
     width: 90%;
-    max-width: 600px;
-    margin: auto;
+    margin: 120px auto;
     background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
+
+.center-title { text-align: center; margin-bottom: 18px; }
+
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.attendance-table th {
+    background: #0056D2;
+    color: white;
+    padding: 10px;
+}
+
+.attendance-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.total-row { font-weight: bold; }
+
+/* Absence Table */
+.absence-box {
+    width: 450px;
+    margin: 120px auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
     padding: 20px;
-    border-radius: 10px;
 }
 
 .absence-table {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 10px;
+    border-collapse: collapse;
     font-size: 18px;
 }
 
-.absence-table tr {
-    border-bottom: 1px solid #cfcfcf;
-}
-
 .absence-table td {
-    padding: 10px 5px;
+    padding: 12px 0;
+    border-bottom: 1px solid #aaa;
 }
 
 .circle {
+    background: #0E4DE2;
+    color: white;
     width: 30px;
     height: 30px;
-    background: #0066ff;
-    color: white;
     border-radius: 50%;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+    line-height: 30px;
     margin: auto;
 }
