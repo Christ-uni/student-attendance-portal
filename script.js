@@ -1,68 +1,38 @@
-document.addEventListener("DOMContentLoaded", function () {
+// User stored data
+const student = {
+    username: "2412205",
+    password: "38716778",
+    name: "Ananya Nallurmana Jayadevan",
+    email: "ananya.jayadevan@bcomfah.christuniversity.in",
+    roll: "2412205",
+    mobile: "9606357445",
+    class: "4BCOMF&A C"
+};
 
-    const loginBtn = document.getElementById("loginBtn");
-    const loginContainer = document.getElementById("loginContainer");
-    const profileContainer = document.getElementById("profileContainer");
-    const logoutBtn = document.getElementById("logoutBtn");
+// Login function
+function login() {
+    let u = document.getElementById("username").value;
+    let p = document.getElementById("password").value;
 
-    const attendanceDropdown = document.getElementById("attendanceDropdown");
-    const absenceDropdown = document.getElementById("absenceDropdown");
-    const attendanceContent = document.getElementById("attendanceContent");
-    const absenceContent = document.getElementById("absenceContent");
-
-    // Sample student data
-    const profile = {
-        name: "Ananya Nallurmana Jayadevan",
-        email: "ananya.jayadevan@bcomfah.christuniversity.in",
-        mobile: "9606357445",
-        rollNo: "2412205",
-        course: "4BCOMF&A C",
-        batch: "2024-27",
-        year: "2nd Year"
-    };
-
-    function loadProfile() {
-        document.getElementById("profileName").innerHTML = `<b>Name:</b> ${profile.name}`;
-        document.getElementById("profileEmail").innerHTML = `<b>Email:</b> ${profile.email}`;
-        document.getElementById("profileMobile").innerHTML = `<b>Mobile:</b> ${profile.mobile}`;
-        document.getElementById("profileID").innerHTML = `Student ID: ${profile.studentId}`;
-        document.getElementById("profileCourse").innerHTML = `Course: ${profile.course}`;
-        document.getElementById("profileBatch").innerHTML = `Batch: ${profile.batch}`;
-        document.getElementById("profileYear").innerHTML = `Year: ${profile.year}`;
+    if (u === student.username && p === student.password) {
+        localStorage.setItem("student", JSON.stringify(student));
+        window.location.href = "profile.html";
+    } else {
+        alert("Invalid Login");
     }
+}
 
-    // Login action
-    loginBtn.addEventListener("click", () => {
-        loginContainer.style.display = "none";
-        profileContainer.style.display = "block";
-        loadProfile();
-        localStorage.setItem("loggedIn", "true");
-    });
+// Load profile data
+if (localStorage.getItem("student") && document.getElementById("pname")) {
+    let s = JSON.parse(localStorage.getItem("student"));
+    document.getElementById("pname").textContent = s.name;
+    document.getElementById("pemail").textContent = s.email;
+    document.getElementById("proll").textContent = s.roll;
+    document.getElementById("pmobile").textContent = s.mobile;
+    document.getElementById("pclass").textContent = s.class;
+}
 
-    // Logout Action
-    logoutBtn.addEventListener("click", () => {
-        localStorage.removeItem("loggedIn");
-        profileContainer.style.display = "none";
-        loginContainer.style.display = "block";
-    });
-
-    // Auto Login
-    if (localStorage.getItem("loggedIn") === "true") {
-        loginContainer.style.display = "none";
-        profileContainer.style.display = "block";
-        loadProfile();
-    }
-
-    // Dropdown Functionality
-    attendanceDropdown.addEventListener("click", () => {
-        attendanceContent.style.display =
-            attendanceContent.style.display === "block" ? "none" : "block";
-    });
-
-    absenceDropdown.addEventListener("click", () => {
-        absenceContent.style.display =
-            absenceContent.style.display === "block" ? "none" : "block";
-    });
-
-});
-
+// Page navigation
+function navigate(page) {
+    window.location.href = page;
+}
