@@ -4,57 +4,38 @@
     <meta charset="UTF-8">
     <title>Attendance</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        body { font-family: Arial, sans-serif; background: #f2f7ff; }
-        .container { width: 90%; margin: auto; background: white; padding: 20px; border-radius: 10px; margin-top: 30px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
-        th { background: #2b6cb0; color: white; }
-        .header-box { padding: 15px; background: #3182ce; color: white; border-radius: 10px; }
-        .logout { float:right; background:#ff4444;color:white;border:none;padding:6px 12px;border-radius:5px;cursor:pointer; }
-    </style>
 </head>
 <body>
 
-<div class="container">
+<div class="sidebar">
+    <h2>Menu</h2>
+    <a href="profile.html">Profile</a>
+    <a href="attendance.html">Attendance</a>
+    <button onclick="logout()" class="logout">Logout</button>
+</div>
 
-    <div class="header-box">
-        <h2 id="studentName"></h2>
-        <p><strong>Roll No:</strong> <span id="rollNo"></span></p>
+<div class="content">
+    <h2>Attendance Details</h2>
+
+    <div class="card">
+        <p><strong>Name:</strong> <span id="studentName"></span></p>
         <p><strong>Email:</strong> <span id="email"></span></p>
-        <button class="logout" onclick="logout()">Logout</button>
+        <p><strong>Roll No:</strong> <span id="rollNo"></span></p>
     </div>
 
-    <h2>Attendance</h2>
-
-    <table>
+    <table class="table">
         <tr>
-            <th>Sl.No</th>
-            <th>Subject Name</th>
-            <th>Attendance Type</th>
-            <th>Conducted</th>
-            <th>Present</th>
-            <th>Total Hours Absent</th>
-            <th>Percentage</th>
+            <th>Sl.No</th><th>Subject</th><th>Type</th><th>Conducted</th><th>Present</th><th>Absent</th><th>Percentage</th>
         </tr>
-
-        <tr><td>1</td><td>INDIRECT TAX</td><td>Theory</td><td>2.0</td><td>1.0</td><td>1.0</td><td>50.0</td></tr>
-        <tr><td>2</td><td>FINANCIAL MANAGEMENT - II</td><td>Theory</td><td>9.0</td><td>6.0</td><td>3.0</td><td>66.67</td></tr>
-        <tr><td>3</td><td>HOLISTIC EDUCATION DEVELOPMENT-II</td><td>Theory</td><td>4.0</td><td>1.0</td><td>3.0</td><td>25.0</td></tr>
-        <tr><td>4</td><td>INCOME TAX</td><td>Theory</td><td>10.0</td><td>7.0</td><td>3.0</td><td>70.0</td></tr>
-        <tr><td>5</td><td>AUDITING - II</td><td>Theory</td><td>12.0</td><td>8.0</td><td>4.0</td><td>66.67</td></tr>
-        <tr><td>6</td><td>DIGITAL MARKETING</td><td>Theory</td><td>13.0</td><td>10.0</td><td>3.0</td><td>76.92</td></tr>
-        <tr><td>7</td><td>STRATEGIC MANAGEMENT AND ETHICAL GOVERNANCE</td><td>Theory</td><td>8.0</td><td>5.0</td><td>3.0</td><td>62.5</td></tr>
-
-        <tr style="font-weight:bold;">
-            <td colspan="3">Total</td>
-            <td>58.0</td>
-            <td>38.0</td>
-            <td>20.0</td>
-            <td>65.52</td>
-        </tr>
+        <tr><td>1</td><td>Indirect Tax</td><td>Theory</td><td>2</td><td>1</td><td>1</td><td>50%</td></tr>
+        <tr><td>2</td><td>Financial Management II</td><td>Theory</td><td>9</td><td>6</td><td>3</td><td>66.67%</td></tr>
+        <tr><td>3</td><td>Holistic Education</td><td>Theory</td><td>4</td><td>1</td><td>3</td><td>25%</td></tr>
+        <tr><td>4</td><td>Income Tax</td><td>Theory</td><td>10</td><td>7</td><td>3</td><td>70%</td></tr>
+        <tr><td>5</td><td>Auditing II</td><td>Theory</td><td>12</td><td>8</td><td>4</td><td>66.67%</td></tr>
+        <tr><td>6</td><td>Digital Marketing</td><td>Theory</td><td>13</td><td>10</td><td>3</td><td>76.92%</td></tr>
+        <tr><td>7</td><td>Strategic Management</td><td>Theory</td><td>8</td><td>5</td><td>3</td><td>62.5%</td></tr>
+        <tr><td colspan="6" style="text-align:right"><strong>Total:</strong></td><td>65.52%</td></tr>
     </table>
-
 </div>
 
 <script src="script.js"></script>
