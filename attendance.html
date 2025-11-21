@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Attendance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h2>Attendance</h2>
+        <select id="menu" onchange="navigateMenu()">
+            <option disabled selected>Menu</option>
+            <option value="attendance.html">Home / Attendance</option>
+            <option value="#">Absence Details</option>
+            <option value="index.html">Logout</option>
+        </select>
+    </header>
+
+    <!-- Student Info Section -->
+    <div class="student-info">
+        <p><strong>Name:</strong> <span id="studentName">John Doe</span></p>
+        <p><strong>Roll Number:</strong> <span>2412205</span></p>
+        <p><strong>Email:</strong> <span id="studentEmail">johndoe@email.com</span></p>
+    </div>
+
+    <!-- Attendance Table -->
+    <table class="attendance-table">
+        <thead>
+            <tr>
+                <th>Sl.No</th>
+                <th>Subject Name</th>
+                <th>Attendance Type</th>
+                <th>Conducted</th>
+                <th>Present</th>
+                <th>Total Hours Absent</th>
+                <th>Percentage</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr><td>1</td><td>INDIRECT TAX</td><td>Theory</td><td>2</td><td>1</td><td>1</td><td>50.0</td></tr>
+            <tr><td>2</td><td>FINANCIAL MANAGEMENT - II</td><td>Theory</td><td>9</td><td>6</td><td>3</td><td>66.67</td></tr>
+            <tr><td>3</td><td>HOLISTIC EDUCATION DEVELOPMENT-II</td><td>Theory</td><td>4</td><td>1</td><td>3</td><td>25.0</td></tr>
+            <tr><td>4</td><td>INCOME TAX</td><td>Theory</td><td>10</td><td>7</td><td>3</td><td>70.0</td></tr>
+            <tr><td>5</td><td>AUDITING - II</td><td>Theory</td><td>12</td><td>8</td><td>4</td><td>66.67</td></tr>
+            <tr><td>6</td><td>DIGITAL MARKETING</td><td>Theory</td><td>13</td><td>10</td><td>3</td><td>76.92</td></tr>
+            <tr><td>7</td><td>STRATEGIC MANAGEMENT AND ETHICAL GOVERNANCE</td><td>Theory</td><td>8</td><td>5</td><td>3</td><td>62.5</td></tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="6" style="text-align:right;"><strong>Total Percentage</strong></td>
+                <td><strong>65.52</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+
+<script>
+function navigateMenu() {
+    const menu = document.getElementById("menu");
+    window.location.href = menu.value;
+}
+</script>
+
+</body>
+</html>
