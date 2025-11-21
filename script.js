@@ -43,7 +43,7 @@ function toggleMenu() {
 
 // close dropdown if clicked outside
 window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
+    if (!event.target.closest('.dropdown')) {
         let items = document.getElementsByClassName("dropdown-content");
         for (let i = 0; i < items.length; i++) {
             items[i].classList.remove("show");
