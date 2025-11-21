@@ -1,43 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Login</title>
 
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                        url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1350&q=60');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
+            height: 100vh;
+            background: url("https://images.shiksha.com/mediadata/images/articles/1663140152phpXSSwBq.jpeg") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* Blur overlay */
+        .blur-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(8px);
+            background-color: rgba(0,0,0,0.4);
+            z-index: 1;
         }
 
         .login-box {
-            width: 370px;
-            background: rgba(255,255,255,0.12);
-            backdrop-filter: blur(10px);
+            width: 350px;
+            background: rgba(255, 255, 255, 0.20);
             padding: 30px;
             border-radius: 12px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
             text-align: center;
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 2;
         }
 
-        .login-title {
-            font-size: 25px;
-            font-weight: bold;
-            margin-bottom: 20px;
+        h2 {
+            color: white;
+            margin-bottom: 25px;
         }
 
         input {
-            width: 88%;
+            width: 100%;
             padding: 12px;
-            margin: 10px 0;
+            margin: 8px 0;
+            border-radius: 8px;
             border: none;
+            outline: none;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #004aad;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 12px;
+        }
+
+        button:hover {
+            background: #002f6c;
+        }
+
+        .footer-text {
+            margin-top: 10px;
+            color: white;
+            font-size: 13px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="blur-overlay"></div>
+
+    <div class="login-box">
+        <h2>Student Login</h2>
+
+        <input type="text" id="loginId" placeholder="Enter Login ID">
+        <input type="password" id="password" placeholder="Enter Password">
+        <button onclick="login()">Login</button>
+
+        <p class="footer-text">Christ University Student Portal</p>
+    </div>
+
+<script>
+    function login() {
+        const id = document.getElementById("loginId").value;
+        const pass = document.getElementById("password").value;
+
+        if (id === "" || pass === "") {
+            alert("Please enter Login ID and Password");
+            return;
+        }
+
+        // Save entered details
+        localStorage.setItem("studentName", "Ananya Nallurmana Jayadevan");
+        localStorage.setItem("email", "ananya.jayadevan@bcomfah.christuniversity.in");
+        localStorage.setItem("roll", "2412205");
+        localStorage.setItem("class", "4BCOMF&A C");
+        localStorage.setItem("mobile", "9606357445");
+
+        window.location.href = "attendance.html";
+    }
+</script>
+
+</body>
+</html>
