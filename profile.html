@@ -1,46 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Student Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+<title>Profile</title>
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg">
 
-  <div class="navbar">
-      <select onchange="navigate(this.value)">
-        <option value="profile.html">Profile</option>
-        <option value="attendance.html">Attendance</option>
-      </select>
-  </div>
+<div class="nav-menu">
+    <button onclick="toggleMenu()">☰ Menu</button>
+    <div class="menu-items" id="menu">
+        <a href="profile.html">Profile</a>
+        <a href="attendance.html">Attendance Details</a>
+        <a href="absence.html">Absence Details</a>
+        <a href="index.html">Logout</a>
+    </div>
+</div>
 
-  <div class="profile-box">
+<div class="profile-box">
     <h2>Student Profile</h2>
-    <p><strong>Name:</strong> <span id="name"></span></p>
-    <p><strong>Email:</strong> <span id="email"></span></p>
-    <p><strong>Roll No:</strong> <span id="rollno"></span></p>
-    <p><strong>Class:</strong> <span id="class"></span></p>
-    <p><strong>Phone:</strong> <span id="phone"></span></p>
-  </div>
 
-<script>
-  let student = JSON.parse(localStorage.getItem('studentData'));
+    <div class="profile-row"><span class="label">Name:</span> Ananya Nallurmana Jayadevan</div>
+    <div class="profile-row"><span class="label">Email:</span> ananya.jayadevan@bcomfah.christuniversity.in</div>
+    <div class="profile-row"><span class="label">Roll No:</span> 2412205</div>
+    <div class="profile-row"><span class="label">Class:</span> 4BCOMF&A C</div>
+    <div class="profile-row"><span class="label">Mobile:</span> 9606357445</div>
+</div>
 
-  if(!student){
-    // If opened without login
-    window.location.href = "index.html";
-  }
-
-  document.getElementById("name").textContent = student.name;
-  document.getElementById("email").textContent = student.email;
-  document.getElementById("rollno").textContent = student.rollno;
-  document.getElementById("class").textContent = student.class;
-  document.getElementById("phone").textContent = student.phone;
-
-  function navigate(page){
-    window.location.href = page;
-  }
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
+
