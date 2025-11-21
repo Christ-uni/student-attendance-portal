@@ -32,16 +32,12 @@ if (localStorage.getItem("student") && document.getElementById("pname")) {
     document.getElementById("pclass").textContent = s.class;
 }
 
-// Page navigation
-function navigate(page) {
-    window.location.href = page;
-}
-
+// Dropdown toggle
 function toggleMenu() {
     document.getElementById("menu").classList.toggle("show");
 }
 
-// close dropdown if clicked outside
+// Auto-close dropdown when clicking outside
 window.onclick = function(event) {
     if (!event.target.closest('.dropdown')) {
         let items = document.getElementsByClassName("dropdown-content");
@@ -50,3 +46,4 @@ window.onclick = function(event) {
         }
     }
 }
+
