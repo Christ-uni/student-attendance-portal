@@ -1,46 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Attendance</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Portal — Attendance</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg">
+<body>
 
-<div class="nav-menu">
-    <button onclick="toggleMenu()">☰ Menu</button>
-    <div class="menu-items" id="menu">
+  <div class="bg-image"></div>
+
+  <div class="topbar">
+    <div class="menu-wrap">
+      <button id="menuBtn2" class="menu-btn">☰ Menu</button>
+      <div id="menuItems2" class="menu-items">
         <a href="profile.html">Profile</a>
         <a href="attendance.html">Attendance Details</a>
         <a href="absence.html">Absence Details</a>
-        <a href="index.html">Logout</a>
+        <a id="logoutLink2" href="#">Logout</a>
+      </div>
     </div>
-</div>
+  </div>
 
-<div class="table-container">
-<h2 class="center-title">Attendance Details</h2>
+  <div class="table-card">
+    <div class="table-header">Attendance</div>
 
-<table class="attendance-table">
-<thead>
-<tr>
-<th>Sl.No</th><th>Subject Name</th><th>Type</th><th>Conducted</th><th>Present</th><th>Absent</th><th>Percentage</th>
-</tr>
-</thead>
+    <table class="attendance-table" role="table">
+      <thead>
+        <tr>
+          <th>Sl.No</th>
+          <th>Subject Name</th>
+          <th>Attendance Type</th>
+          <th>Conducted</th>
+          <th>Present</th>
+          <th>Total Hours absent</th>
+          <th>Percentage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>INDIRECT TAX</td><td>Theory</td><td>2.0</td><td>1.0</td><td><a href="#">1.0</a></td><td>50.0</td></tr>
+        <tr><td>2</td><td>FINANCIAL MANAGEMENT - II</td><td>Theory</td><td>9.0</td><td>6.0</td><td><a href="#">3.0</a></td><td>66.67</td></tr>
+        <tr><td>3</td><td>HOLISTIC EDUCATION DEVELOPMENT-II</td><td>Theory</td><td>4.0</td><td>1.0</td><td><a href="#">3.0</a></td><td>25.0</td></tr>
+        <tr><td>4</td><td>INCOME TAX</td><td>Theory</td><td>10.0</td><td>7.0</td><td><a href="#">3.0</a></td><td>70.0</td></tr>
+        <tr><td>5</td><td>AUDITING - II</td><td>Theory</td><td>12.0</td><td>8.0</td><td><a href="#">4.0</a></td><td>66.67</td></tr>
+        <tr><td>6</td><td>DIGITAL MARKETING</td><td>Theory</td><td>13.0</td><td>10.0</td><td><a href="#">3.0</a></td><td>76.92</td></tr>
+        <tr><td>7</td><td>STRATEGIC MANAGEMENT AND ETHICAL GOVERNANCE</td><td>Theory</td><td>8.0</td><td>5.0</td><td><a href="#">3.0</a></td><td>62.5</td></tr>
 
-<tbody>
-<tr><td>1</td><td>INDIRECT TAX</td><td>Theory</td><td>2</td><td>1</td><td>1</td><td>50%</td></tr>
-<tr><td>2</td><td>FINANCIAL MANAGEMENT - II</td><td>Theory</td><td>9</td><td>6</td><td>3</td><td>66.67%</td></tr>
-<tr><td>3</td><td>HOLISTIC EDUCATION DEVELOPMENT-II</td><td>Theory</td><td>4</td><td>1</td><td>3</td><td>25%</td></tr>
-<tr><td>4</td><td>INCOME TAX</td><td>Theory</td><td>10</td><td>7</td><td>3</td><td>70%</td></tr>
-<tr><td>5</td><td>AUDITING - II</td><td>Theory</td><td>12</td><td>8</td><td>4</td><td>66.67%</td></tr>
-<tr><td>6</td><td>DIGITAL MARKETING</td><td>Theory</td><td>13</td><td>10</td><td>3</td><td>76.92%</td></tr>
-<tr><td>7</td><td>STRATEGIC MANAGEMENT AND ETHICAL GOVERNANCE</td><td>Theory</td><td>8</td><td>5</td><td>3</td><td>62.5%</td></tr>
+        <tr class="total-row"><td colspan="3">Total</td><td>58.0</td><td>38.0</td><td>20.0</td><td>65.52</td></tr>
+      </tbody>
+    </table>
 
-<tr class="total-row"><td colspan="3">Total</td><td>58</td><td>38</td><td>20</td><td>65.52%</td></tr>
-</tbody>
-</table>
-</div>
+    <div class="attendance-note">
+      <p>The medical leave will be considered only if aggregate % is above 75% at the end of semester. Medical leave will be applied between 75% and 85% of attendance with co-curricular activities added to the total aggregate.</p>
+      <p>* Maximum percentage without leave</p>
+      <p>* Total Percentage=(Total Class Present/Total Class Conducted)*100</p>
+    </div>
+  </div>
 
 <script src="script.js"></script>
 </body>
 </html>
-
