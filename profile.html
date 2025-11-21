@@ -1,32 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Profile</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="sidebar">
-    <h2>Menu</h2>
-    <a href="profile.html">Profile</a>
-    <a href="attendance.html">Attendance</a>
-    <button onclick="logout()" class="logout">Logout</button>
-</div>
+  <div class="navbar">
+      <select onchange="navigate(this.value)">
+        <option value="profile.html">Profile</option>
+        <option value="attendance.html">Attendance</option>
+      </select>
+  </div>
 
-<div class="content">
+  <div class="profile-box">
     <h2>Student Profile</h2>
+    <p><strong>Name:</strong> <span id="name"></span></p>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>Roll No:</strong> <span id="rollno"></span></p>
+    <p><strong>Class:</strong> <span id="class"></span></p>
+    <p><strong>Phone:</strong> <span id="phone"></span></p>
+  </div>
 
-    <div class="card">
-        <p><strong>Name:</strong> <span id="studentName"></span></p>
-        <p><strong>Email:</strong> <span id="email"></span></p>
-        <p><strong>Roll No:</strong> <span id="rollNo"></span></p>
-        <p><strong>Class:</strong> <span id="class"></span></p>
-        <p><strong>Mobile:</strong> <span id="phone"></span></p>
-    </div>
+<script>
+  let student = JSON.parse(localStorage.getItem('studentData'));
 
-</div>
+  if(!student){
+    // If opened without login
+    window.location.href = "index.html";
+  }
 
-<script src="script.js"></script>
+  document.getElementById("name").textContent = student.name;
+  document.getElementById("email").textContent = student.email;
+  document.getElementById("rollno").textContent = student.rollno;
+  document.getElementById("class").textContent = student.class;
+  document.getElementById("phone").textContent = student.phone;
+
+  function navigate(page){
+    window.location.href = page;
+  }
+</script>
+
 </body>
 </html>
