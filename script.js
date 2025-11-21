@@ -1,7 +1,7 @@
 // Login validation
 function login() {
     const correctId = "2412205";
-    const correctPassword = "38716777";
+    const correctPassword = "38716778";
 
     let enteredId = document.getElementById("studentId").value;
     let enteredPassword = document.getElementById("password").value;
