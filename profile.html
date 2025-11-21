@@ -1,61 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Student Portal — Profile</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="bg-image"></div>
+<div class="menu">
+    <select onchange="navigate(this.value)">
+        <option value="profile.html">Profile</option>
+        <option value="attendance.html">Attendance Details</option>
+        <option value="absence.html">Absence Details</option>
+        <option value="index.html">Logout</option>
+    </select>
+</div>
 
-  <!-- top-right dropdown -->
-  <div class="topbar">
-    <div class="menu-wrap">
-      <button id="menuBtn" class="menu-btn">☰ Menu</button>
-      <div id="menuItems" class="menu-items">
-        <a href="profile.html">Profile</a>
-        <a href="attendance.html">Attendance Details</a>
-        <a href="absence.html">Absence Details</a>
-        <a id="logoutLink" href="#">Logout</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- profile card in center -->
-  <div class="card profile-card" id="profileCard">
-    <h2>Student Details</h2>
-
-    <div class="form-row">
-      <label class="lbl">Name:</label>
-      <input id="profileName" class="field" />
-    </div>
-
-    <div class="form-row">
-      <label class="lbl">Email ID:</label>
-      <input id="profileEmail" class="field" />
-    </div>
-
-    <div class="form-row">
-      <label class="lbl">Roll No:</label>
-      <input id="profileRoll" class="field" />
-    </div>
-
-    <div class="form-row">
-      <label class="lbl">Class:</label>
-      <input id="profileClass" class="field" />
-    </div>
-
-    <div class="form-row">
-      <label class="lbl">Mobile:</label>
-      <input id="profileMobile" class="field" />
-    </div>
-
-    <div class="actions-row">
-      <button id="saveProfile" class="primary-btn">Save</button>
-    </div>
-  </div>
+<div class="box">
+    <h2>Student Profile</h2>
+    <p><b>Name:</b> <span id="pname"></span></p>
+    <p><b>Email:</b> <span id="pemail"></span></p>
+    <p><b>Roll No:</b> <span id="proll"></span></p>
+    <p><b>Mobile:</b> <span id="pmobile"></span></p>
+    <p><b>Class:</b> <span id="pclass"></span></p>
+</div>
 
 <script src="script.js"></script>
 </body>
