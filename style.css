@@ -192,3 +192,30 @@ button:hover {
     display: block;
 }
 
+/* TABLE FIX */
+table {
+    width: 70%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    background: white;
+    font-size: 18px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #ff6600;
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #ffe6cc;
+}
