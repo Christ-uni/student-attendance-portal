@@ -1,36 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Attendance</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="menu">
-    <select onchange="navigate(this.value)">
-        <option value="profile.html">Profile</option>
-        <option selected value="attendance.html">Attendance Details</option>
-        <option value="absence.html">Absence Details</option>
-        <option value="index.html">Logout</option>
-    </select>
-</div>
+<!-- TOP BAR WITH DROPDOWN -->
+<header class="navbar">
+    <h2 class="logo">Student Portal</h2>
+    <div class="dropdown">
+        <button class="dropbtn">☰</button>
+        <div class="dropdown-content">
+            <a href="profile.html">Profile</a>
+            <a href="attendance.html">Attendance Details</a>
+            <a href="absence.html">Absence Details</a>  <!-- NEW OPTION -->
+            <a href="index.html">Logout</a>
+        </div>
+    </div>
+</header>
 
-<div class="box table-box">
-<h2>Attendance</h2>
-<table border="1" cellspacing="0" cellpadding="8">
-<tr><th>Sl.No</th><th>Subject Name</th><th>Attendance Type</th><th>Conducted</th><th>Present</th><th>Total Hours Absent</th><th>Percentage</th></tr>
-<tr><td>1</td><td>INDIRECT TAX</td><td>Theory</td><td>2</td><td>1</td><td>1</td><td>50</td></tr>
-<tr><td>2</td><td>FINANCIAL MANAGEMENT - II</td><td>Theory</td><td>9</td><td>6</td><td>3</td><td>66.67</td></tr>
-<tr><td>3</td><td>HOLISTIC EDUCATION DEVELOPMENT-II</td><td>Theory</td><td>4</td><td>1</td><td>3</td><td>25</td></tr>
-<tr><td>4</td><td>INCOME TAX</td><td>Theory</td><td>10</td><td>7</td><td>3</td><td>70</td></tr>
-<tr><td>5</td><td>AUDITING - II</td><td>Theory</td><td>12</td><td>8</td><td>4</td><td>66.67</td></tr>
-<tr><td>6</td><td>DIGITAL MARKETING</td><td>Theory</td><td>13</td><td>10</td><td>3</td><td>76.92</td></tr>
-<tr><td>7</td><td>STRATEGIC MANAGEMENT AND ETHICAL GOVERNANCE</td><td>Theory</td><td>8</td><td>5</td><td>3</td><td>62.5</td></tr>
-<tr><td colspan="6"><b>Total Percentage</b></td><td><b>65.52</b></td></tr>
-</table>
+<h1 class="section-title">Attendance</h1>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Sl.No</th>
+                <th>Subject Name</th>
+                <th>Attendance Type</th>
+                <th>Conducted</th>
+                <th>Present</th>
+                <th>Total Hours absent</th>
+                <th>Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>INDIRECT TAX</td><td>Theory</td><td>2.0</td><td>1.0</td><td>1.0</td><td>50.0</td></tr>
+            <tr><td>2</td><td>FINANCIAL MANAGEMENT - II</td><td>Theory</td><td>9.0</td><td>6.0</td><td>3.0</td><td>66.67</td></tr>
+            <tr><td>3</td><td>HOLISTIC EDUCATION DEVELOPMENT-II</td><td>Theory</td><td>4.0</td><td>1.0</td><td>3.0</td><td>25.0</td></tr>
+            <tr><td>4</td><td>INCOME TAX</td><td>Theory</td><td>10.0</td><td>7.0</td><td>3.0</td><td>70.0</td></tr>
+            <tr><td>5</td><td>AUDITING - II</td><td>Theory</td><td>12.0</td><td>8.0</td><td>4.0</td><td>66.67</td></tr>
+            <tr><td>6</td><td>DIGITAL MARKETING</td><td>Theory</td><td>13.0</td><td>10.0</td><td>3.0</td><td>76.92</td></tr>
+            <tr><td>7</td><td>STRATEGIC MANAGEMENT AND ETHICAL GOVERNANCE</td><td>Theory</td><td>8.0</td><td>5.0</td><td>3.0</td><td>62.5</td></tr>
+            <tr style="font-weight:bold;"><td colspan="3">Total</td><td>58.0</td><td>38.0</td><td>20.0</td><td>65.52</td></tr>
+        </tbody>
+    </table>
 </div>
 
 <script src="script.js"></script>
 </body>
 </html>
+
