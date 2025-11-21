@@ -267,3 +267,81 @@ button:hover {
 .marks-container::-webkit-scrollbar-track {
     background: #ddd;
 }
+
+/* ---------------- Marks Table Design ---------------- */
+
+.marks-table {
+    width: 95%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-size: 15px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.marks-table th {
+    background: #002b5c;
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+}
+
+.marks-table td {
+    padding: 10px;
+    border-bottom: 1px solid #cfd3dc;
+}
+
+/* GP/Total/Percentage row styling like screenshot */
+.result-bar {
+    width: 95%;
+    margin: 10px auto;
+    background: #e7ebf5;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 8px;
+}
+
+/* First class green bar like screenshot */
+.status {
+    width: 95%;
+    margin: 10px auto;
+    background: #17a240;
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* "Details" Title styling */
+.details-title {
+    text-align: center;
+    font-size: 22px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #002b5c;
+}
+
+/* Subject breakdown lines */
+.details-table {
+    width: 95%;
+    margin: 10px auto;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.details-table td {
+    padding: 8px;
+    border-bottom: 1px solid #b8b8b8;
+    font-weight: bold;
+}
+
+.details-table td span {
+    font-weight: normal;
+    color: #444;
+}
+
