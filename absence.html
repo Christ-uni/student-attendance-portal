@@ -1,39 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Student Portal — Absence</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>Absence Details</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="bg-image"></div>
+<div class="menu">
+    <select onchange="navigate(this.value)">
+        <option value="profile.html">Profile</option>
+        <option value="attendance.html">Attendance Details</option>
+        <option selected value="absence.html">Absence Details</option>
+        <option value="index.html">Logout</option>
+    </select>
+</div>
 
-  <div class="topbar">
-    <div class="menu-wrap">
-      <button id="menuBtn3" class="menu-btn">☰ Menu</button>
-      <div id="menuItems3" class="menu-items">
-        <a href="profile.html">Profile</a>
-        <a href="attendance.html">Attendance Details</a>
-        <a href="absence.html">Absence Details</a>
-        <a id="logoutLink3" href="#">Logout</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card absence-card">
-    <table class="absence-table">
-      <tbody>
-        <tr><td class="date-col">30-10-2025</td><td class="day-col">Thursday</td><td class="num-col"><span class="circle">5</span></td></tr>
-        <tr><td class="date-col">31-10-2025</td><td class="day-col">Friday</td><td class="num-col"><span class="circle">5</span></td></tr>
-        <tr><td class="date-col">07-11-2025</td><td class="day-col">Friday</td><td class="num-col"><span class="circle">4</span></td></tr>
-        <tr><td class="date-col">10-11-2025</td><td class="day-col">Monday</td><td class="num-col"><span class="circle">4</span></td></tr>
-        <tr><td class="date-col">13-11-2025</td><td class="day-col">Thursday</td><td class="num-col"><span class="circle">1</span></td></tr>
-        <tr><td class="date-col">20-11-2025</td><td class="day-col">Thursday</td><td class="num-col"><span class="circle">1</span></td></tr>
-      </tbody>
-    </table>
-  </div>
+<div class="box table-box">
+<h2>Absence Details</h2>
+<table class="absence">
+<tr><td>30-10-2025</td><td>Thursday</td><td><span class="circle">5</span></td></tr>
+<tr><td>31-10-2025</td><td>Friday</td><td><span class="circle">5</span></td></tr>
+<tr><td>7-11-2025</td><td>Friday</td><td><span class="circle">4</span></td></tr>
+<tr><td>10-11-2025</td><td>Monday</td><td><span class="circle">4</span></td></tr>
+<tr><td>13-11-2025</td><td>Thursday</td><td><span class="circle">1</span></td></tr>
+<tr><td>20-11-2025</td><td>Thursday</td><td><span class="circle">1</span></td></tr>
+</table>
+</div>
 
 <script src="script.js"></script>
 </body>
